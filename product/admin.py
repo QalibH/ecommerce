@@ -1,4 +1,12 @@
 from django.contrib import admin
-from product.models import Product
+from product.models import *
 
-admin.site.register(Product)
+
+
+class ProductAdmin(admin.ModelAdmin):
+    list_display = ('name', 'price')
+    list_filter = ('created_at',)
+    search_fields = ('name', 'price')
+
+
+admin.site.register(Product, ProductAdmin)

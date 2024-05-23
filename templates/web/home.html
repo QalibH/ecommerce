@@ -1,9 +1,55 @@
-<!doctype html>
+{% extends 'base/layout.html' %}
+
+{% block content %}
+    <br><br><br><br>
+    <div class="container">
+        <form action='' method="POST" enctype="multipart/form-data">
+            {% csrf_token %}
+            <input type="text" class="form-control">
+            <br>
+            <input type="text" class="form-control">
+            <br><br>
+            <button class="btn btn-success btn-md">Enter</button>
+
+        </form>
+        <br><br>
+    
+    <div class="alert alert-warning">There is xxx information in the database</div>
+
+    <table class="table table-responsive">
+        <thead class="table-dark">
+            <tr>
+                <th>id</th>
+                <th>Product name</th>
+                <th>Price</th>
+                <th>Date</th>
+                <th>User</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>2</td>
+                <td>Samsung</td>
+                <td>1222</td>
+                <td>24</td>
+                <td>Q</td>
+            </tr>
+        </tbody>
+    </table>
+
+    </div>
+{% endblock %}
+
+
+
+
+<!-- <!doctype html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Kur sizi salamlıyir</title>
+    <title>E-commerce</title>
+    
     <h2>Products:</h2>
 
     {% for instance in products %}
@@ -13,9 +59,12 @@
     <h4>Price {{ instance.price }}</h4>
 
     <h4>Date: {{ instance.created_at }} </h4>
+
+    <h4>User: {{ instance.user.username }} </h4>
+
     {% endfor %}
 </head>
 <body>
 
 </body>
-</html>
+</html> -->
