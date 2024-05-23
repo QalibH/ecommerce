@@ -22,7 +22,6 @@ def calculator_view(request):
 
 
 import requests
-from django.shortcuts import render
 
 def currency_converter_view(request):
     if request.method == 'POST':
